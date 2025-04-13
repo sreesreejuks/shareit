@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shareit-app
+    restart: unless-stopped
+    ports:
+      - "4040:4040"
+    environment:
+      - NODE_ENV=production
+      - PORT=4040
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 

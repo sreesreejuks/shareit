@@ -1,0 +1,19 @@
+{
+    "name": "Node.js Development",
+    "image": "node:20-bullseye",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "vscode.typescript-language-features"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "vscode.typescript-language-features"
+            }
+        }
+    },
+    "forwardPorts": [4040],
+    "postCreateCommand": "npm install",
+    "remoteUser": "node"
+} 
