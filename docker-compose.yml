@@ -5,15 +5,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: shareit-app
+    container_name: shareit
     restart: unless-stopped
     ports:
-      - "4040:4040"
+      - "5555:5555"
     environment:
       - NODE_ENV=production
-      - PORT=4040
+      - PORT=5555
     volumes:
-      - ./logs:/app/logs
+      - /tmp/shareit/logs:/app/logs
+      - /tmp/shareit/:/app/upload
     networks:
       - app-network
 
